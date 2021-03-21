@@ -17,12 +17,13 @@
           label="Quantidade"
           type="number"
           v-model.number="quantity"
+          :error="insufficienteQuantity || !Number.isInteger(quantity)"
         />
         <v-btn
-          :disabled="quantity <= 0 || !Number.isInteger(quantity)"
+          :disabled="insufficienteQuantity || quantity <= 0 || !Number.isInteger(quantity)"
           @click="sellStock"
           class="blue darken-3 white--text"
-          >Vender</v-btn
+          >{{insufficienteQuantity ? 'Insuficiente' : 'Vender'}}</v-btn
         >
       </v-container>
     </v-card>
@@ -53,6 +54,11 @@ export default {
       this.quantity = 0;
     },
   },
+  computed: {
+      insufficienteQuantity(){
+        return this.quantity > this.stock.quantity
+      }
+  }
 };
 </script>
 
