@@ -3,7 +3,7 @@
     <v-card class="green darken-3 white--text">
       <v-card-title class="headline">
         <strong
-          >{{ stock.name }}<small> (Preço: {{ stock.price }})</small></strong
+          >{{ stock.name }}<small> (Preço: {{ stock.price | currency }})</small></strong
         >
       </v-card-title>
     </v-card>

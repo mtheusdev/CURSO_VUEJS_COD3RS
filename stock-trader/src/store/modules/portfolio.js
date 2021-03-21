@@ -40,7 +40,7 @@ export default{
                     id: stock.id,
                     quantity: stock.quantity,
                     name: record.name,
-                    price: record.prices
+                    price: record.price
                 }
             })
         },

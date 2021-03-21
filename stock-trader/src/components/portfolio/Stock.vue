@@ -3,10 +3,8 @@
     <v-card class="blue darken-3 white--text">
       <v-card-title class="headline">
         <strong>{{ stock.name }}
-          <small> (Preço: {{ stock.price }} || Qtd: {{stock.quantity}})
-
+          <small> (Preço: {{ stock.price | currency}} | Qtd: {{stock.quantity}})
           </small>
-
           </strong>
 
       </v-card-title>
@@ -35,7 +33,7 @@
 import {mapActions} from 'vuex'
 
 export default {
-  props: ["stock"],
+  props: ['stock'],
   data() {
     return {
       quantity: 0,
